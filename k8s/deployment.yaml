@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ggj-feed-service
+  labels:
+    app: ggj-feed-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ggj-feed-service
+  template:
+    metadata:
+      labels:
+        app: ggj-feed-service
+    spec:
+      containers:
+      - name: ggj-feed-service
+        image: ggj-feed-service
+        ports:
+        - containerPort: 3000
