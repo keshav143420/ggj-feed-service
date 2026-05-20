@@ -19,3 +19,10 @@ spec:
         image: ggj-feed-service
         ports:
         - containerPort: 3000
+        env:
+        - name: REDIS_HOST
+          value: "redis-service"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: KAFKA_BROKERS
+          value: "kafka-service:9092"
